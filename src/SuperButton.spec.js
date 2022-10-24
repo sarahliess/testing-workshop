@@ -1,24 +1,17 @@
-import React from "react";
-import { shallow, configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import AwesomeButton from "./SuperButton";
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import SuperButton from './SuperButton';
 
-configure({ adapter: new Adapter() });
-
-it("should change the text after clicking the button", () => {
-  const button = shallow(<AwesomeButton />);
-
-  expect(button.text()).toBe("I'm an awesome button");
-
-  button.find("button").simulate("click");
-
-  expect(button.text()).toBe("I'm not a super awesome button?");
+it('should change the text after clicking the button', () => {
+  render(<SuperButton />);
+  const button = screen.getByText(`I'm an awesome button`);
+  expect(button).toBeInTheDocument();
+  fireEvent.click(button);
+  expect(screen.getByText(`I'm not a super awesome button?`)).toBeInTheDocument();
 });
 
-it("should have a red background color", () => {
-  const button = shallow(<AwesomeButton />);
-
-  const color = button.find("button").prop("style").background;
-
-  expect(color).toBe("red");
+it('should have a red background color', () => {
+  render(<SuperButton />);
+  const button = screen.getByText(`I'm an awesome button`);
+  expect(button).toHaveStyle(`background-color: red`);
 });
