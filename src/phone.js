@@ -5,7 +5,7 @@ export default function isPhoneNumber(number) {
   //   if (number.startsWith("+491")) {
   //     return true;
   //   }
-  // }
+  // }ddd
 
   return false;
 }
