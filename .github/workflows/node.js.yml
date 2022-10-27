@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-
+    name: production-checks
     runs-on: ubuntu-latest
 
     strategy:
