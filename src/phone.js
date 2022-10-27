@@ -6,6 +6,5 @@ export default function isPhoneNumber(number) {
   //     return true;
   //   }new feature branch
   // }
-
   return false;
 }
