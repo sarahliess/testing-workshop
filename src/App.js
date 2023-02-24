@@ -4,7 +4,7 @@ import SuperButton from "./SuperButton";
 export default function App() {
   return (
     <div className="App">
-      <h1>Testing Workshop </h1>
+      <h1>Testing Workshop 24.02.23</h1>
       <h1>
         Hello Tests! With{" "}
         <a
